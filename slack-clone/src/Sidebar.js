@@ -14,16 +14,18 @@ import AddIcon from "@material-ui/icons/Add";
 
 import db from './firebase'
 
+import { useStateValue } from "./StateProvider";
 //
 import SidebarOption from "./SidebarOption";
 
 import "./Sidebar.css";
 
 function Sidebar() {
+  const [{ user }, dispatch] = useStateValue();
   const [channels, setChannels] = useState([]);
 
   useEffect(() => {
-    db.collection('name').onSnapshot(snapshot=>{
+    db.collection('rooms').onSnapshot(snapshot=>{
       setChannels(
         snapshot.docs.map(doc=>(
           {
@@ -42,7 +44,7 @@ function Sidebar() {
           <h2>Clever Programmer</h2>
           <h3>
             <FiberManualRecordIcon />
-            Rafeh Qazi
+            {user?.displayName}
           </h3>
         </div>
         <CreateIcon />
