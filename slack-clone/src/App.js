@@ -1,17 +1,27 @@
-import React from 'react';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Header from "./Header";
+import Sidebar from "./Sidebar";
 
-import Header from './Header'
-import Sidebar from './Sidebar'
-
-import './App.css';
+import "./App.css";
 
 function App() {
   return (
     <div className="app">
-     <Header/>
-     <div className="app_body">
-        <Sidebar/>
-     </div>
+      <Router>
+        <Header />
+        <div className="app_body">
+          <Sidebar />
+          <Switch>
+            <Route path="/room/:roomId">
+              <Chat/>
+            </Route>
+            <Route path="/">
+              <h1>Welcom</h1>
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     </div>
   );
 }
