@@ -41,3 +41,7 @@
 ```
 import {useParams} from "react-router-dom"
 ```
+
+
+
+8. google auth
