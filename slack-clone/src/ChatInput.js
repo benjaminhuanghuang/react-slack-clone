@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 
+import firebase from 'firebase'
 import db from './firebase'
+
+import { useStateValue } from "./StateProvider";
 
 import "./ChatInput.css";
 
 function ChatInput({ channelName, channelId }) {
   const [input, setInput] = useState("");
-
+  const [{user}] = useStateValue();
 
   const sendMessage = (e) => {
     e.preventDefault();

@@ -9,9 +9,10 @@ import { actionTypes } from "./reducer";
 import "./Login.css";
 
 function Login() {
-  const [state, dispatch] = useStateValue;
+  const [state, dispatch] = useStateValue();
+  const [{user}] = useStateValue();
 
-  const singIn = () => {
+  const signIn = () => {
     auth
       .signInWithPopup(provider)
       .then((result) => {
@@ -32,7 +33,7 @@ function Login() {
         <img src="https://seeklogo.com/images/S/slack-logo-DE4445077C-seeklogo.com.png" alt="" />
         <h1>Sign in to Clever Programmer HQ</h1>
         <p>cleverprogrammer.slack.com</p>
-        <Button>Sign in with Google</Button>
+        <Button onClick={signIn}>Sign in with Google</Button>
       </div>
     </div>
   );

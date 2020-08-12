@@ -11,7 +11,8 @@ import {useStateValue} from './StateProvider';
 import "./App.css";
 
 function App() {
-  const [state, dispatch] = useStateValue;
+  const [state, dispatch] = useStateValue();
+  const [{user}] = useStateValue();
 
   return (
     <div className="app">
