@@ -6,6 +6,7 @@ import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 import db from "./firebase";
 
 import Message from './Message'
+import ChatInput from './ChatInput'
 
 import "./Chat.css";
 
@@ -50,6 +51,7 @@ function Chat() {
           <Message message={message} timestamp={timestamp} user={user} userImage={userImage} />
         ))}
       </div>
+      <ChatInput></ChatInput>
     </div>
   );
 }
