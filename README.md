@@ -23,3 +23,9 @@
   npm i firebase
 ```
 - Copy config to project
+
+
+3. Install Material UI
+```
+  npm i @material-ui/core @material-ui/icons -S 
+```
