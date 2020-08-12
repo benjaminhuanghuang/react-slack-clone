@@ -4,13 +4,19 @@ import db from './firebase'
 
 import "./ChatInput.css";
 
-function ChatInput({ channelName, channeldId }) {
+function ChatInput({ channelName, channelId }) {
   const [input, setInput] = useState("");
-  
+
+
   const sendMessage = (e) => {
     e.preventDefault();
-    if(channeldId){
-      db.collection('rooms').doc(channelId).collection
+    if(channelId){
+      db.collection('rooms').doc(channelId).collection.add({
+        message: input,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp,
+        user: user.displayName,
+        userImage: user.photoURL
+      })
     }
   };
 
