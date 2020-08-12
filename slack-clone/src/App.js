@@ -6,10 +6,13 @@ import Sidebar from "./Sidebar";
 import Chat from "./Chat";
 import Login from "./Login";
 
+import {useStateValue} from './StateProvider';
+
 import "./App.css";
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [state, dispatch] = useStateValue;
+
   return (
     <div className="app">
       <Router>

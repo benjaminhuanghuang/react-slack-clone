@@ -45,3 +45,4 @@ import {useParams} from "react-router-dom"
 
 
 8. google auth
+firebaser -> Authentication -> enable google sign-in
