@@ -29,3 +29,15 @@
 ```
   npm i @material-ui/core @material-ui/icons -S 
 ```
+
+4. Header
+
+5. Sidebar / SidebarOption
+
+5. Install router
+```
+  npm i react-router-dom
+```
+```
+import {useParams} from "react-router-dom"
+```
