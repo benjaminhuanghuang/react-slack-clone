@@ -11,14 +11,14 @@ function App() {
     <div className="app">
       <Router>
         <Header />
-        <div className="app_body">
+        <div className="app__body">
           <Sidebar />
           <Switch>
             <Route path="/room/:roomId">
               <Chat/>
             </Route>
             <Route path="/">
-              <h1>Welcom</h1>
+              <Chat/>
             </Route>
           </Switch>
         </div>
