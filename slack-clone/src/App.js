@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="app">
       <Router>
-        {!user ? (
+        {!true ? ( //user
           <Login />
         ) : (
           <>
